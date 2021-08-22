@@ -18,7 +18,7 @@ ValueFromPipeline: True
 Add-Fonts "C:\Users\ameadvin\Downloads"
 - Without pipe, using mandatory paramater.
 .EXAMPLE
-Read-Host "Enter a valid file path of fonts to be installed." | Add-Fonts
+Read-Host "Enter a valid file path of fonts to be installed" | Add-Fonts
 - With pipe, using a Read-Host command for user-input.
 #>
 
