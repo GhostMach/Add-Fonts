@@ -23,10 +23,6 @@ Read-Host "Enter a valid file path of fonts to be installed." | Add-Fonts
 #>
 
 
-#	'Add-Type -AssemblyName PresentationCore' is a required .NET class that must be invoked in order to instantiate
-#	(cont'd) the 'Windows.Media.GlyphTypeface' object.
-#	If working in a Powershell terminal, enter the 'Add-Type' command first and then enter the code found in the Add-Fonts function.
-Add-Type -AssemblyName PresentationCore
 
 function Add-Fonts {
 	[cmdletbinding(SupportsPaging = $true)]
@@ -66,9 +62,12 @@ function Add-Fonts {
 				$this.ReadGlyphsCollected = @()
 			}
 
+#		Adds the 'PresentationCore.dll' assembly in order to instantiate the 'GlyphTypeface' object.
+		Add-Type -AssemblyName PresentationCore
+
 #		Loops through each font's metadata properties, capturing the following attributes in an array: name, weight, style.
 		foreach ($Glyphs in $UnreadGlyphs.FullName) {
-			$GlyphFace = [Windows.Media.GlyphTypeface]::new([uri]::new($Glyphs))
+			$GlyphFace = New-Object -TypeName Windows.Media.GlyphTypeface -ArgumentList $Glyphs
 			$ReadFontName = $GlyphFace.FamilyNames.Value
 			$ReadFontWeight = $GlyphFace.Weight
 			$ReadFontStyle = $GlyphFace.Style
