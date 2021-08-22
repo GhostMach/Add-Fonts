@@ -12,7 +12,7 @@ Paramaters: 'FontPathParam'
 ValueFromPipeline: True
 .DESCRIPTION
 - Adds fonts with file extension .OTF and .TTF, ignoring other file types that may reside in same file directory.
-- Will NOT install fonts found in C:Windows\Fonts file directory based on the font's metadata properties and NOT
+- Will NOT install fonts found in the "C:\Windows\Fonts" file directory based on the font's metadata properties and NOT
 (cont'd) the font's file name.
 .EXAMPLE
 Add-Fonts "C:\Users\ameadvin\Downloads"
