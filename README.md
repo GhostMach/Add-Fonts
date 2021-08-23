@@ -16,7 +16,7 @@ Script can be used in a Endpoint Configuration Manager to batch install a librar
 ### Features
 - Limits unnecessary writes to the system registry and "C:\Windows\Fonts" file directory by verifiying installed fonts using Microsoft's "GlyphTypeface" object instead of the font's file name.
 - Accepts a "piped" input, such as a "Read-Host" command for user input to enter a file path of a font's location.
-- Will automatically search a (user-provided) file directory for `.otf` & `.ttf` file extensions.
+- Will automatically search a (user-provided) file directory for the existenance of `.otf` & `.ttf` file types to begin the installation process.
 
 
 ## Etcetera
