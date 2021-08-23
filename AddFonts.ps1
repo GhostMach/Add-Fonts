@@ -134,6 +134,6 @@ function Add-Fonts {
 
 #	Conditionally executed if "Read-Host" command piped to 'Add-Fonts' function.
 	if ($PSCmdlet.MyInvocation.ExpectingInput) {
-		Write-Host "`nPlease log out and then login to complete font installation ONLY IF a font(s) has been installed." -Foreground Magenta
+		Write-Host "`nPlease log out and then login ONLY IF a font(s) has been installed." -Foreground Magenta
 	}
 }
